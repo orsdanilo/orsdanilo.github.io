@@ -62,9 +62,9 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "I like visual and spoken language, and I work with data."
   links:
-      #    - label: "Website"
-      #      icon: "fas fa-fw fa-link"
-      #      url: "https://"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://orsdanilo.github.io"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/orsdanilo"

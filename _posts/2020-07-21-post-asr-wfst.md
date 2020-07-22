@@ -81,7 +81,7 @@ A transducer $T=(\mathcal{A}, \mathcal{B}, \mathcal{Q}, I, F, E, \lambda, \rho)$
 
 The set of transitions is $E\subseteq\bar{E}=\mathcal{Q}\times(\mathcal{A}\cup\{\epsilon\})\times(\mathcal{B}\cup\{\epsilon\})\times\mathbb{K}\times\mathcal{Q}$. This means it is a subset of all possibilities of transition from one state to another (or to itself) with an input label, an output label and a weight.
 
-The operations are executed on specific \textit{semirings}. A semiring is a set $\mathbb{R}$ equipped with two binary operators addition ($\oplus$) and multiplication ($\otimes$), with identity elements $\bar{0}$ and $\bar{1}$, respectively. One simple example of a semiring is the set of natural numbers (including zero) under ordinary addition and multiplication [[3]](#references). Two commonly used semirings in ASR are the *probability semiring* and the *log semiring*, shown in [Table 1](#tab1).
+The operations are executed on specific *semirings*. A semiring is a set $\mathbb{R}$ equipped with two binary operators addition ($\oplus$) and multiplication ($\otimes$), with identity elements $\bar{0}$ and $\bar{1}$, respectively. One simple example of a semiring is the set of natural numbers (including zero) under ordinary addition and multiplication [[3]](#references). Two commonly used semirings in ASR are the *probability semiring* and the *log semiring*, shown in [Table 1](#tab1).
 
 | SEMIRING | SET | $\oplus$ | $\otimes$ | $\bar{0}$ | $\bar{1}$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|

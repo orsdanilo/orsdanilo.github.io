@@ -18,7 +18,7 @@ table:nth-of-type(1) {
 
 This post is the executive summary of my final project for graduate school in France. The work was conducted from April to September 2018 in the Speech and Sound Group (SSG) at Sony, in Germany, under the supervision of Marc Ferras-Font. The project used mainly [Kaldi](https://github.com/kaldi-asr/kaldi), an open-source toolkit for Automatic Speech Recognition. [Click here](https://github.com/orsdanilo/asr-dynamic-wfst-decoder/tree/master/executive_summary_FR) for the French version. 
 
-Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. Such systems aim to infer the original words given an observable signal, most commonly following a probabilistic approach. We call decoding the process of calculating which sequence of words is most likely to match the acoustic signal {% cite gruhn2011statistical %}.
+Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. Such systems aim to infer the original words given an observable signal, most commonly following a probabilistic approach. We call decoding the process of calculating which sequence of words is most likely to match the acoustic signal [[1]](#references).
 
 One extensively used way of searching the best word sequence involves the use of Weighted Finite State Transducers (WFST), static graphs encoding the whole word-sequence search space. They contain many levels of information, and define what is allowed (and more probable) in the language. During decoding, the decoder examines them in order to predict the best sequence(s) - the most probable / less costly path(s).
 
@@ -48,7 +48,32 @@ These two features were combined in a sole decoder that includes on-the-fly clas
 
 Granted, the performance of the dynamic decoder is worse than the original non-lazy, non-replaced graph, both in terms of accuracy and speed. Nevertheless, this impact on performance was expected; the original graph, though impractical in terms of size, is further optimized, since it's a single piece. Our implemented graph can also be further optimized so as to get as close a performance as possible to the original, ordinary graph.
 
-References
-----------
+## References
 
-{% bibliography --cited %}
+[1] Gruhn, R. E., Minker, W., & Nakamura, S. (2011). Statistical Pronunciation Modeling for Non-Native Speech Processing. Springer Berlin Heidelberg.
+
+
+{% if page.comments %}
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://orsdanilo-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{% endif %}

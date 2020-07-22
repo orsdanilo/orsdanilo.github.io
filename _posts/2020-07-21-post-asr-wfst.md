@@ -27,10 +27,8 @@ table:nth-of-type(1) {
 }
 </style>
 
-{{ page.title }}
-================
 
-Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. An ASR system aims to infer the original words given an observable signal, most commonly following a probabilistic approach {% cite gruhn2011statistical %}. 
+Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. An ASR system aims to infer the original words given an observable signal, most commonly following a probabilistic approach [[1]](#references). 
 
 ![ASRtest](/assets/images/ASRtest.png)  
 **Figure 1:** Diagram of an ASR system.
@@ -39,7 +37,7 @@ Automatic Speech Recognition (ASR) systems convert speech from a recorded audio 
 
 The input audio is split into overlapping frames of 25ms shifted by 10ms, so that within this tiny time window, the speech signal is considered to be stationary, allowing for the analysis featured here. Before decoding, these are fed to a feature extractor, which reduces signal dimensionality and extracts the most relevant information, that is, the linguistic message.
 
-Decoding is the process of calculating which sequence of words is most likely to match the acoustic signal represented by the feature vectors {% cite gruhn2011statistical %}. Decoding is executed based on three sources of information:
+Decoding is the process of calculating which sequence of words is most likely to match the acoustic signal represented by the feature vectors [[1]](#references). Decoding is executed based on three sources of information:
 
 * **Acoustic model:** An ensemble of HMMs representing words or phonemes;
 * **Language model:** A list of word sequence probabilities;
@@ -66,7 +64,7 @@ Weighted Finite State Transducers
 
 Weighted Finite State Transducers (WFSTs) are static graphs encoding the whole word-sequence search space. They contain many levels of information, going from the acoustic model to phones in context, to single phonemes, to words, and finally, words in sequence.
 
-A finite-state transducer is a finite automaton whose state transitions are labeled with both input and output symbols. Therefore, a path through the transducer encodes a mapping from an input to an output string. They provide a common and natural representation for major components of speech recognition systems, including Hidden Markov Models (HMMs), context-dependency models, pronunciation dictionaries, statistical grammars and word or phone lattices {% cite mohri2008speech %}. The decoder goes through the WFST creating a lattice, a graph structure that contains the most probable - or less costly - paths for a given utterance (a continuous piece of speech beginning and ending with a clear pause), taking into account both acoustic and language costs.
+A finite-state transducer is a finite automaton whose state transitions are labeled with both input and output symbols. Therefore, a path through the transducer encodes a mapping from an input to an output string. They provide a common and natural representation for major components of speech recognition systems, including Hidden Markov Models (HMMs), context-dependency models, pronunciation dictionaries, statistical grammars and word or phone lattices [[2]](#references). The decoder goes through the WFST creating a lattice, a graph structure that contains the most probable - or less costly - paths for a given utterance (a continuous piece of speech beginning and ending with a clear pause), taking into account both acoustic and language costs.
 
 A transducer $T=(\mathcal{A}, \mathcal{B}, \mathcal{Q}, I, F, E, \lambda, \rho)$ over a semiring $\mathbb{K}$ is characterized by:
 
@@ -81,7 +79,7 @@ A transducer $T=(\mathcal{A}, \mathcal{B}, \mathcal{Q}, I, F, E, \lambda, \rho)$
 
 The set of transitions is $E\subseteq\bar{E}=\mathcal{Q}\times(\mathcal{A}\cup\{\epsilon\})\times(\mathcal{B}\cup\{\epsilon\})\times\mathbb{K}\times\mathcal{Q}$. This means it is a subset of all possibilities of transition from one state to another (or to itself) with an input label, an output label and a weight.
 
-The operations are executed on specific \textit{semirings}. A semiring is a set $\mathbb{R}$ equipped with two binary operators addition ($\oplus$) and multiplication ($\otimes$), with identity elements $\bar{0}$ and $\bar{1}$, respectively. One simple example of a semiring is the set of natural numbers (including zero) under ordinary addition and multiplication {% cite akian2009linear %}. Two commonly used semirings in ASR are the *probability semiring* and the *log semiring*, shown in [Table 1](#tab1).
+The operations are executed on specific \textit{semirings}. A semiring is a set $\mathbb{R}$ equipped with two binary operators addition ($\oplus$) and multiplication ($\otimes$), with identity elements $\bar{0}$ and $\bar{1}$, respectively. One simple example of a semiring is the set of natural numbers (including zero) under ordinary addition and multiplication [[3]](#references). Two commonly used semirings in ASR are the *probability semiring* and the *log semiring*, shown in [Table 1](#tab1).
 
 | SEMIRING | SET | $\oplus$ | $\otimes$ | $\bar{0}$ | $\bar{1}$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -137,10 +135,10 @@ Below is a visual example of graph growth with composition of H, C, L and G tran
 {: style="font-size: 80%; text-align: center;"}
 {: #fig7}
 
-The operation of composition essentially consists in checking transitions in both input transducers and adding an arc to the output graph whenever the output label of the first transducer matches the input of the second one. This creates a mapping between the input of $T_1$ and the output of $T_2$. A visual example, also from {% cite mohri2008speech %}, is shown in [Figure 8](#fig8).
+The operation of composition essentially consists in checking transitions in both input transducers and adding an arc to the output graph whenever the output label of the first transducer matches the input of the second one. This creates a mapping between the input of $T_1$ and the output of $T_2$. A visual example, also from [[2]](#references), is shown in [Figure 8](#fig8).
 
 ![composition](/assets/images/composition.png)  
-**Figure 8:** Example of a basic transducer composition {% cite mohri2008speech %}. The upper left transducer is $T_1$, the upper right one is $T_2$, and the graph below them is the result.
+**Figure 8:** Example of a basic transducer composition [[2]](#references). The upper left transducer is $T_1$, the upper right one is $T_2$, and the graph below them is the result.
 {: style="font-size: 80%; text-align: center;"}
 {: #fig8}
 
@@ -158,14 +156,19 @@ Below is an illustration of decoding operation. For each time frame, visited sta
 {: style="font-size: 80%; text-align: center;"}
 {: fig10}
 
-Kaldi creates a data structure corresponding to a full state-level lattice, so for every arc of $HCLG$ traversed, a separate arc is created in the lattice, with acoustic and graph cost stored separately, as illustrated in [Figure 10](#fig10). This structure is pruned periodically, and the final pruned graph then has its epsilons removed and is determinized {% cite povey2012generating %}.
+Kaldi creates a data structure corresponding to a full state-level lattice, so for every arc of $HCLG$ traversed, a separate arc is created in the lattice, with acoustic and graph cost stored separately, as illustrated in [Figure 10](#fig10). This structure is pruned periodically, and the final pruned graph then has its epsilons removed and is determinized [[4]](#references).
 
-More on the theory of weighted finite state transducers can be found in {% cite mohri2008speech %}.
+More on the theory of weighted finite state transducers can be found in [[2]](#references).
 
-References
-----------
+## References
 
-{% bibliography --cited %}
+[1] Gruhn, R. E., Minker, W., & Nakamura, S. (2011). Statistical Pronunciation Modeling for Non-Native Speech Processing. Springer Berlin Heidelberg.
+
+[2] Mohri, M., Pereira, F., & Riley, M. (2008). Speech recognition with weighted finite-state transducers. In Springer Handbook of Speech Processing (pp. 559–584). Springer.
+
+[3] Akian, M., Gaubert, S., & Guterman, A. (2009). Linear independence over tropical semirings and beyond. Contemporary Mathematics, 495, 1.
+
+[4] Povey, D., Hannemann, M., Boulianne, G., Burget, L., Ghoshal, A., Janda, M., Karafiát, M., Kombrink, S., Motlı́ček Petr, Qian, Y., & others. (2012). Generating exact lattices in the WFST framework. Acoustics, Speech and Signal Processing (ICASSP), 2012 IEEE International Conference On, 4213–4216.
 
 {% if page.comments %}
 

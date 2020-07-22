@@ -1,8 +1,10 @@
 ---
 title: "Dynamic WFST-based Decoder for Automatic Speech Recognition"
 last_modified_at: 2020-07-21T22:27:00-03:00
+classes: wide
 header:
   image: /assets/images/grammar_brcd.png
+  teaser: /assets/images/grammar_brcd.png
 categories:
   - Blog
 tags:

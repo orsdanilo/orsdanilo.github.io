@@ -1,8 +1,10 @@
 ---
 title: Automatic Speech Recognition
 mathjax: True
+classes: wide
 header:
   image: /assets/images/hclg.png
+  teaser: /assets/images/hclg.png
 categories:
   - Blog
 tags:

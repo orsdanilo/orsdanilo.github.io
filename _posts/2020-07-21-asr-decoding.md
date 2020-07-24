@@ -42,11 +42,11 @@ The input audio is split into overlapping frames of 25ms shifted by 10ms, so tha
 
 Decoding is the process of calculating which sequence of words is most likely to match the acoustic signal represented by the feature vectors [[1]](#references) of a given utterance (a continuous piece of speech beginning and ending with a clear pause). Decoding is executed based on three sources of information:
 
-* **Acoustic model:** An ensemble of HMMs representing words or phonemes;
+* **Acoustic model:** An ensemble of [Hidden Markov Models](https://en.wikipedia.org/wiki/Hidden_Markov_model) representing words or phonemes;
 * **Language model:** A list of word sequence probabilities;
 * **Lexicon:** A dictionary of words and their respective phonemes.
 
-During decoding, we essentially use these to try to predict the word sequence $\hat{W}$ that best matches the acoustic observation $\boldsymbol{X}=X_1 X_2\ldots X_n$, as seen in
+During decoding, we essentially use these to try to predict the word sequence $\hat{W}$ that best matches the acoustic observation $\boldsymbol{X}=X_1 X_2\ldots X_n$, obtained using Bayes rule:
 
 $$
 \begin{equation*}

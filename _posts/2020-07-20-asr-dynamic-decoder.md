@@ -3,12 +3,13 @@ title: "Dynamic WFST-based Decoder for Automatic Speech Recognition"
 last_modified_at: 2020-07-21T22:27:00-03:00
 classes: wide
 header:
-  image: /assets/images/grammar_brcd.png
-  teaser: /assets/images/grammar_brcd.png
+  image: /assets/images/lg_brcd.png
+  teaser: /assets/images/lg_brcd.png
 categories:
   - Blog
 tags:
   - ASR
+  - Decoder
 ---
 
 <style>
@@ -18,9 +19,9 @@ table:nth-of-type(1) {
 }
 </style>
 
-This post is the executive summary of my final project for graduate school in France. The work was conducted from April to September 2018 in the Speech and Sound Group (SSG) at Sony, in Germany, under the supervision of Marc Ferras-Font. The project used mainly [Kaldi](https://github.com/kaldi-asr/kaldi), an open-source toolkit for Automatic Speech Recognition. [Click here](https://github.com/orsdanilo/asr-dynamic-wfst-decoder/tree/master/executive_summary_FR) for the French version. 
+This post is the executive summary of my final project for graduate school in France. The work was conducted from April to September 2018 in the Speech and Sound Group (SSG) at Sony, in Germany, under the supervision of Marc Ferras-Font. The project used mainly Kaldi [[1]](#references), an open-source toolkit for Automatic Speech Recognition. [Click here](https://github.com/orsdanilo/asr-dynamic-wfst-decoder/tree/master/executive_summary_FR) for the French version. 
 
-Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. Such systems aim to infer the original words given an observable signal, most commonly following a probabilistic approach. We call decoding the process of calculating which sequence of words is most likely to match the acoustic signal [[1]](#references).
+Automatic Speech Recognition (ASR) systems convert speech from a recorded audio signal to text. Such systems aim to infer the original words given an observable signal, most commonly following a probabilistic approach. We call decoding the process of calculating which sequence of words is most likely to match the acoustic signal [[2]](#references).
 
 One extensively used way of searching the best word sequence involves the use of Weighted Finite State Transducers (WFST), static graphs encoding the whole word-sequence search space. They contain many levels of information, and define what is allowed (and more probable) in the language. During decoding, the decoder examines them in order to predict the best sequence(s) - the most probable / less costly path(s).
 
@@ -52,7 +53,9 @@ Granted, the performance of the dynamic decoder is worse than the original non-l
 
 ## References
 
-[1] Gruhn, R. E., Minker, W., & Nakamura, S. (2011). Statistical Pronunciation Modeling for Non-Native Speech Processing. Springer Berlin Heidelberg.
+[1] [Povey, D., Ghoshal, A., Boulianne, G., Burget, L., Glembek, O., Goel, N., Hannemann, M., Motlicek, P., Qian, Y., Schwarz, P., Silovsky, J., Stemmer, G., & Vesely, K. (2011, December). The Kaldi Speech Recognition Toolkit. IEEE 2011 Workshop on Automatic Speech Recognition and Understanding.](https://infoscience.epfl.ch/record/192584/files/Povey_ASRU2011_2011.pdf)
+
+[2] [Gruhn, R. E., Minker, W., & Nakamura, S. (2011). Statistical Pronunciation Modeling for Non-Native Speech Processing. Springer Berlin Heidelberg.](https://books.google.com.br/books?hl=pt-BR&lr=&id=H_rGeqqaulYC&oi=fnd&pg=PR3&dq=Gruhn,+R.+E.,+Minker,+W.,+%26+Nakamura,+S.+(2011).+Statistical+Pronunciation+Modeling+for+Non-Native+Speech+Processing.+Springer+Berlin+Heidelberg.&ots=fvEiLQNOnn&sig=xEkxaP7JGRYzddwxUg-6GQMEHN8#v=onepage&q=Gruhn%2C%20R.%20E.%2C%20Minker%2C%20W.%2C%20%26%20Nakamura%2C%20S.%20(2011).%20Statistical%20Pronunciation%20Modeling%20for%20Non-Native%20Speech%20Processing.%20Springer%20Berlin%20Heidelberg.&f=false)
 
 
 {% if page.comments %}

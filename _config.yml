@@ -58,7 +58,8 @@ plugins:
   - jemoji
   - jekyll-include-cache
   - jekyll-scholar
-  - jekyll-figure
+  # - jekyll-figure
+  # - jekyll-relative-links
 
 author:
   name   : "Danilo de Oliveira"

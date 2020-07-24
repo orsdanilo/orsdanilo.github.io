@@ -61,7 +61,7 @@ $$
 
 The acoustic analysis is performed by a Deep Neural Network, which is trained to output the posterior probability $P(\boldsymbol{X} \mid \boldsymbol{W})$ of obtaining this observation given a candidate word sequence. The prior probability $P(\boldsymbol{W})$ of a word sequence is obtained from a language model, containing the allowed and most frequent occurrences for a given language. Therefore, prior probability and posterior likelihood are combined in order to output the best prediction with the available information.
 
-One solution for the search of the best word sequence involves the use of Weighted Finite State Transducers (WFSTs). I wrote about it in [this post](/_posts/2020-07-21-ast-decoding.md), if you feel up for the challenge.
+One solution for the search of the best word sequence involves the use of Weighted Finite State Transducers (WFSTs). I wrote about it in [this post]({% post_url 2020-07-21-asr-wfst %}), if you feel up for the challenge.
 
 ## References
 

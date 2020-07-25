@@ -4,8 +4,8 @@ last_modified_at: 2020-07-2eT23:45:00-03:00
 mathjax: True
 classes: wide
 header:
-  image: /assets/images/grammar_brcd.png
-  teaser: /assets/images/grammar_brcd.png
+  image: /assets/images/hclg.png
+  teaser: /assets/images/hclg.png
 categories:
   - Blog
 tags:

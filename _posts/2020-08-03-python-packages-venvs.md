@@ -123,7 +123,7 @@ And then anyone who needs to run the project can obtain the packages in the foll
 
 [Anaconda](https://www.anaconda.com) is a free and open-source distribution of the Python and R programming languages for scientific computing and data science. It comes with approximately 250 scientific packages installed out-of-the-box and Anaconda Navigator, a Graphical User Interface (GUI).
 
-If you're not new to Python or programming in general and somewhat confortable with the idea of using the Command Line Interface (CLI), it is preferred to use Miniconda instead, which installs only `conda` (more on that below) and, on Windows, Anaconda Prompt.
+If you're not new to Python or programming in general and somewhat confortable with the idea of using the Command Line Interface (CLI), it is preferred to use [Miniconda](https://docs.conda.io/en/latest/miniconda.html) instead, which installs only `conda` (more on that below) and, on Windows, Anaconda Prompt.
 
 ### conda
 
@@ -161,6 +161,8 @@ And then the file can be used to recreate the environment:
 ```shell
 $ conda env create -f environment.yml
 ```
+
+You can find more commands for `conda` in this [cheat sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf).
 
 Here is a comparison table between `conda` and `pip` taken from the [Anaconda Blog](https://www.anaconda.com/blog/understanding-conda-and-pip):
 

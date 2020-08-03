@@ -66,29 +66,3 @@ One solution for the search of the best word sequence involves the use of Weight
 ## References
 
 [1] [Gruhn, R. E., Minker, W., & Nakamura, S. (2011). Statistical Pronunciation Modeling for Non-Native Speech Processing. Springer Berlin Heidelberg.](https://books.google.com.br/books?hl=pt-BR&lr=&id=H_rGeqqaulYC&oi=fnd&pg=PR3&dq=Gruhn,+R.+E.,+Minker,+W.,+%26+Nakamura,+S.+(2011).+Statistical+Pronunciation+Modeling+for+Non-Native+Speech+Processing.+Springer+Berlin+Heidelberg.&ots=fvEiLQNOnn&sig=xEkxaP7JGRYzddwxUg-6GQMEHN8#v=onepage&q=Gruhn%2C%20R.%20E.%2C%20Minker%2C%20W.%2C%20%26%20Nakamura%2C%20S.%20(2011).%20Statistical%20Pronunciation%20Modeling%20for%20Non-Native%20Speech%20Processing.%20Springer%20Berlin%20Heidelberg.&f=false)
-
-
-{% if page.comments %}
-
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://orsdanilo-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-{% endif %}

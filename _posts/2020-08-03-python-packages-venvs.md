@@ -121,7 +121,7 @@ And then anyone who needs to run the project can obtain the packages in the foll
 
 ## Anaconda
 
-[Anaconda](https://www.anaconda.com) is a free and open-source distribution of the Python and R programming languages for scientific computing and data-science. It comes with approximately 250 scientific packages installed out-of-the-box and Anaconda Navigator, a Graphical User Interface (GUI).
+[Anaconda](https://www.anaconda.com) is a free and open-source distribution of the Python and R programming languages for scientific computing and data science. It comes with approximately 250 scientific packages installed out-of-the-box and Anaconda Navigator, a Graphical User Interface (GUI).
 
 If you're not new to Python or programming in general and somewhat confortable with the idea of using the Command Line Interface (CLI), it is preferred to use Miniconda instead, which installs only `conda` (more on that below) and, on Windows, Anaconda Prompt.
 
@@ -179,6 +179,6 @@ An important additional piece of information is the number of packages available
 
 ## Conclusion
 
-All in all, `conda` is a great tool for doing Data Science work. Gathering different functionalities all in on tool certainly makes things a bit more fluid. If you're doing pure Python work, `pip`+`venv` will probably do the job just fine. For general Data Science projects with varied scientific libraries and dependencies, it may be a good idea to use `conda`. Since the two package managers aren't exactly interchangeable, the recommended approach is to use an isolated `conda` environment, trying to install everything with `conda` and backing off to `pip` when needed.
+All in all, `conda` is a great tool for doing data science work. Gathering different functionalities all in on tool certainly makes things a bit more fluid. If you're doing pure Python work, `pip`+`venv` will probably do the job just fine. For general data science projects with varied scientific libraries and dependencies, it may be a good idea to use `conda`. Since the two package managers aren't exactly interchangeable, the recommended approach is to use an isolated `conda` environment, trying to install everything with `conda` and backing off to `pip` when needed.
 
-In this article I tried to gather some information on the available tools for Python and Data Science development. I recommend that you check the numerous references along this page, do your research and experiments, and then decide what works best for you. I hope it was helpful!
+In this article I tried to gather some information on the available tools for Python development. I recommend that you check the numerous references along this page, do your research and experiments, and then decide what works best for you. I hope it was helpful!

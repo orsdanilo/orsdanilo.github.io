@@ -92,7 +92,7 @@ Since version 3.5 of Python, the recommended tool to create virtual environments
 ```shell
 $ python3 -m venv <envname>
 ```
-It will by default use the newest Python 3 version installed on the computer.
+Where `<envname>` is the name of the new environment. It will by default use the newest Python 3 version installed on the computer as the version of the Python interpreter in the project.
 
 To activate the virtual environment on Linux or MacOS, run:
 ```shell
@@ -104,9 +104,14 @@ Or on Windows:
 $ <envname>\Scripts\activate.bat
 ```
 
-After running this activation script, `(<envname>)` should be prefixed to the command prompt, showing what is the current environment. To exit the current env, type
+After running this activation script, `(<envname>)` will be prefixed to the command prompt, showing what is the current environment, like so:
 ```shell
-$ deactivate
+(<envname>) $
+```
+
+To exit the current env, type
+```shell
+(<envname>) $ deactivate
 ```
 
 Though it is common practice to create the virtual environment inside the project directory, it is not a good idea to keep it in the project repository, due to OS specifities and folder size. The best alternative is to persist the list of required packages and their versions to a file with the command below:
@@ -121,9 +126,9 @@ And then anyone who needs to run the project can obtain the packages in the foll
 
 ## Anaconda
 
-[Anaconda](https://www.anaconda.com) is a free and open-source distribution of the Python and R programming languages for scientific computing and data science. It comes with approximately 250 scientific packages installed out-of-the-box and Anaconda Navigator, a Graphical User Interface (GUI).
+[Anaconda](https://www.anaconda.com) is a free and open-source distribution of the Python and R programming languages for scientific computing and data science. It comes with Python, approximately 250 scientific packages installed out-of-the-box and Anaconda Navigator, a Graphical User Interface (GUI).
 
-If you're not new to Python or programming in general and somewhat confortable with the idea of using the Command Line Interface (CLI), it is preferred to use [Miniconda](https://docs.conda.io/en/latest/miniconda.html) instead, which installs only `conda` (more on that below) and, on Windows, Anaconda Prompt.
+If you're not new to Python or programming in general and somewhat confortable with the idea of using the Command Line Interface (CLI), it is preferred to use [Miniconda](https://docs.conda.io/en/latest/miniconda.html) instead, which installs only Python, `conda` (more on that below) and, on Windows, Anaconda Prompt.
 
 ### conda
 
